@@ -17,7 +17,7 @@ class Songlist extends Component {
 
   render() {
     return (
-      <section className="songlist">
+      <ul className="songlist">
         { true
           ?
           this.state.songData.map((info, index) => {
@@ -26,7 +26,7 @@ class Songlist extends Component {
           :
           console.log('welp') }
 
-      </section>
+      </ul>
     )
   }
 }
