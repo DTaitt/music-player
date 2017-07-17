@@ -22,3 +22,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.songlist {
+  border: 1px solid black;
+}
+
+.song {
+  margin: 5px;
+  border: 1px solid red;
+}
