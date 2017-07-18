@@ -6,7 +6,6 @@ class Songlist extends Component {
   render() {
     return (
       <section className="songlist">
-        <h1>Songlist</h1>
         <ul className="songlist">
         {
           this.props.songData.map((info) => {

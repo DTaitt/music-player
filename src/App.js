@@ -4,11 +4,12 @@ import './App.css';
 //import song data
 import songData from './songData.js';
 
-//import material ui theme
+//import material components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 //import components
 import Header from './components/Header.jsx';
+import TabBody from './components/TabBody.jsx';
 import Songlist from './components/Songlist.jsx';
 
 class App extends Component {
@@ -35,7 +36,7 @@ class App extends Component {
       <MuiThemeProvider>
         <div className="App">
           <Header />
-          <Songlist songData = { this.state.songData } addToPlaylist = { this.addToPlaylist } playlist = { this.state.playlist } />
+          <TabBody songData = { this.state.songData } addToPlaylist = { this.addToPlaylist } playlist = { this.state.playlist } />
         </div>
       </MuiThemeProvider>
     );
