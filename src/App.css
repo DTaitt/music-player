@@ -1,20 +1,53 @@
 /*GLOBAL*/
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
+  margin: 0;
   padding: 0; }
+
+h1 {
+  font-size: 10vw; }
+
+h2 {
+  font-size: 8vw; }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0; }
 
-/*.songlist {
-  border: 1px solid black;
-}
+/*HEADER*/
+header {
+  background: red; }
+  header h1 {
+    padding: 5vw;
+    text-align: center; }
 
-.song {
-  padding: 15px 5px;
-  margin: 10px 0;
-  border: 1px solid red;
-}
-*/
+/*SONGLIST*/
+section.songlist {
+  background: orange; }
+  section.songlist h1 {
+    background: green;
+    padding: 2vw;
+    text-align: center; }
+
+ul.songlist {
+  background: yellow; }
+
+/*SONG*/
+div.song {
+  padding: 5vw 2vw;
+  margin: 2vw 1vw; }
+  div.song h2.song_title {
+    text-align: center;
+    background: blue;
+    padding: 5vw 0; }
+  div.song p.album_title {
+    text-align: center;
+    background: purple;
+    padding: 3vw 0; }
+  div.song div.like_or_not {
+    background: aqua; }
+
+div.like_icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 5vw 0; }
