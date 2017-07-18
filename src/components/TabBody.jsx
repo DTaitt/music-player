@@ -5,6 +5,7 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 
 import Songlist from './Songlist.jsx';
+import Playlist from './Playlist.jsx';
 
 const styles = {
   headline: {
@@ -47,7 +48,7 @@ class TabBody extends Component {
             <Songlist songData = { this.props.songData } addToPlaylist = { this.props.addToPlaylist } playlist = { this.props.playlist } />
           </div>
           <div style={styles.slide}>
-            slide n°2
+            <Playlist songData = { this.props.songData } playlist = { this.props.playlist } />
           </div>
         </SwipeableViews>
       </div>
