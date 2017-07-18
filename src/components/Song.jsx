@@ -1,34 +1,45 @@
 import React, { Component } from 'react';
-import songData from '../songData.js';
 
+//import material components
 import Paper from 'material-ui/Paper';
-// import Paper from 'react-md/lib/Papers';
+import FontIcon from 'material-ui/FontIcon';
+import { red500, blue500 } from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
-// import Button from 'react-md/lib/Buttons/Button';
-
-// console.log(songData);
-
-const style = {
-  // height: 100,
-  // width: 100,
-  // margin: 20,
-  // textAlign: 'center',
-  // display: 'inline-block',
-};
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 class Song extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      isLiked: false,
+      isDisliked: false,
+    }
+  }
+
+  toggleLike() {
+    this.setState({
+      isLiked: !this.state.isLiked,
+    })
+  }
+
   render() {
     return (
       <li>
-        <Paper style={style} zDepth={3} rounded={false} className='song'>
-          <h1>{ this.props.title }</h1>
-          <h1>{ this.props.album }</h1>
+        <Paper zDepth={3} rounded={false} className='song'>
+          <h2 className="song_title">{ this.props.title }</h2>
+          <p className="album_title">{ this.props.album }</p>
           <audio controls>
             <source src={ this.props.audio } type="audio/mp3"/>
           </audio>
-          <div className="btn-example">
-            <RaisedButton primary label="Like"></RaisedButton>
-            <RaisedButton secondary label="Dislike"></RaisedButton>
+          <div className="like_icons">
+            <FontIcon className="material-icons" hoverColor={red500} >thumb_up</FontIcon>
+            <FontIcon className="material-icons" hoverColor={blue500}>thumb_down</FontIcon>
+          </div>
+          <div className="like_or_not">
+            <RaisedButton primary fullWidth = {true } label="Like"></RaisedButton>
+            <RaisedButton secondary fullWidth = { true } label="Dislike"></RaisedButton>
           </div>
         </Paper>
       </li>
