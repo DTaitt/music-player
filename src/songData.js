@@ -10,29 +10,39 @@ const someoneLikeYou = require('./audio/17 Adele - Someone Like You (Live Acoust
 
 const songData = [
   {
+    'id': 1,
     'title': 'Pretty Wings',
     'album': 'BLACKsummers\'night',
-    'audio': prettyWings
+    'audio': prettyWings,
+    'filetype': 'mp3',
   },
   {
+    'id': 2,
     'title': 'Shape of You',
     'album': '÷',
-    'audio': shapeOfYou
+    'audio': shapeOfYou,
+    'filetype': 'mp3',
   },
   {
+    'id': 3,
     'title': 'Fu-Gee-La',
     'album': 'The Score',
-    'audio': fuGeeLa
+    'audio': fuGeeLa,
+    'filetype': 'mp3',
   },
   {
+    'id': 4,
     'title': 'Luv',
     'album': 'I Told You',
-    'audio': luv
+    'audio': luv,
+    'filetype': 'mp3',
   },
   {
+    'id': 5,
     'title': 'Someone Like You',
     'album': '21',
-    'audio': someoneLikeYou
+    'audio': someoneLikeYou,
+    'filetype': 'mp3',
   },
 ]
 
