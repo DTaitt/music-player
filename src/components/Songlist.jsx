@@ -9,8 +9,8 @@ class Songlist extends Component {
         <h1>Songlist</h1>
         <ul className="songlist">
         {
-          this.props.songData.map((info, index) => {
-            return <Song title={ info.title } album={ info.album } audio={ info.audio } key = { index } />
+          this.props.songData.map((info) => {
+            return <Song songObject = { info } title={ info.title } album={ info.album } audio={ info.audio } key = { info.id } filetype = { info.filetype } addToPlaylist = { this.props.addToPlaylist } playlist = { this.props.playlist } />
           })
         }
         </ul>

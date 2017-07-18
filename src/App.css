@@ -47,7 +47,7 @@ div.song {
   div.song div.like_or_not {
     background: aqua; }
 
-div.like_icons {
+div.like_icon {
   display: flex;
   justify-content: space-around;
   padding: 5vw 0; }

@@ -17,16 +17,25 @@ class App extends Component {
     super()
     this.state = {
       songData: songData,
-      // isLiked: null,
+      playlist: [],
     }
+
+    this.addToPlaylist = this.addToPlaylist.bind(this);
+  }
+
+  addToPlaylist(songObject) {
+    this.setState({
+      playlist: this.state.playlist.concat(songObject),
+    })
   }
 
   render() {
+    console.log(this.state);
     return (
       <MuiThemeProvider>
         <div className="App">
           <Header />
-          <Songlist songData = { this.state.songData } />
+          <Songlist songData = { this.state.songData } addToPlaylist = { this.addToPlaylist } playlist = { this.state.playlist } />
         </div>
       </MuiThemeProvider>
     );

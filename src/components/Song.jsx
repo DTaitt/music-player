@@ -14,7 +14,6 @@ class Song extends Component {
     super();
     this.state = {
       isLiked: false,
-      isDisliked: false,
     }
   }
 
@@ -31,16 +30,20 @@ class Song extends Component {
           <h2 className="song_title">{ this.props.title }</h2>
           <p className="album_title">{ this.props.album }</p>
           <audio controls>
-            <source src={ this.props.audio } type="audio/mp3"/>
+            <source src={ this.props.audio } type={ `audio/${ this.props.filetype }` }/>
           </audio>
-          <div className="like_icons">
-            <FontIcon className="material-icons" hoverColor={red500} >thumb_up</FontIcon>
-            <FontIcon className="material-icons" hoverColor={blue500}>thumb_down</FontIcon>
+          <div className="like_icon">
+            <FontIcon
+              className="material-icons"
+              onClick={ () => this.toggleLike() }
+              color={
+                this.state.isLiked
+                ? red500
+                : ""
+              }
+            >thumb_up</FontIcon>
           </div>
-          <div className="like_or_not">
-            <RaisedButton primary fullWidth = {true } label="Like"></RaisedButton>
-            <RaisedButton secondary fullWidth = { true } label="Dislike"></RaisedButton>
-          </div>
+          <RaisedButton primary fullWidth = {true } className="playlist_btn" onClick = { () => this.props.addToPlaylist(this.props.songObject) } label="Add To Playlist"></RaisedButton>
         </Paper>
       </li>
     )
