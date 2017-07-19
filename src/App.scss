@@ -13,6 +13,10 @@ h2 {
   font-size: 8vw;
 }
 
+p {
+  font-size: 4.5vw;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -33,11 +37,6 @@ header {
 
 section.songlist {
   background: orange;
-  h1 {
-    background: green;
-    padding: 2vw;
-    text-align: center;
-  }
 }
 
 ul.songlist {
@@ -59,13 +58,12 @@ div.song {
     background: purple;
     padding: 3vw 0;
   }
-  div.like_or_not {
-    background: aqua;
+  div.like_icon {
+    display: flex;
+    justify-content: space-around;
+    padding: 5vw 0;
+    background: grey;
   }
 }
 
-div.like_icon {
-  display: flex;
-  justify-content: space-around;
-  padding: 5vw 0;
-}
+
