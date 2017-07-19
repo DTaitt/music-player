@@ -13,14 +13,32 @@ class Song extends Component {
   constructor() {
     super();
     this.state = {
-      isLiked: false,
+      isLiked: null,
     }
   }
 
-  toggleLike() {
-    this.setState({
-      isLiked: !this.state.isLiked,
-    })
+  likeSong(likeStatus) {
+    if (likeStatus === null) {
+      this.setState({
+        isLiked: true,
+      })
+    } else if (likeStatus === true) {
+      this.setState({
+        isLiked: null,
+      })
+    }
+  }
+
+  dislikeSong(likeStatus) {
+    if (likeStatus === null) {
+      this.setState({
+        isLiked: false,
+      })
+    } else if (likeStatus === false) {
+      this.setState({
+        isLiked: null,
+      })
+    }
   }
 
   render() {
@@ -35,15 +53,28 @@ class Song extends Component {
           <div className="like_icon">
             <FontIcon
               className="material-icons"
-              onClick={ () => this.toggleLike() }
+              onClick={ () => this.likeSong(this.state.isLiked) }
               color={
                 this.state.isLiked
                 ? red500
                 : ""
               }
             >thumb_up</FontIcon>
+            <FontIcon
+              className="material-icons"
+              onClick={ () => this.dislikeSong(this.state.isLiked) }
+              color={
+                this.state.isLiked === false
+                ? red500
+                : ""
+              }
+            >thumb_down</FontIcon>
+            <FontIcon
+              className="material-icons playlist-btn"
+              onClick = { () => this.props.addToPlaylist(this.props.songObject) }
+            >playlist_add</FontIcon>
           </div>
-          <RaisedButton primary fullWidth = {true } className="playlist_btn" onClick = { () => this.props.addToPlaylist(this.props.songObject) } label="Add To Playlist"></RaisedButton>
+          <RaisedButton primary fullWidth = {true } className="material-icons playlist-btn" onClick = { () => this.props.addToPlaylist(this.props.songObject) } label="Add To Playlist"></RaisedButton>
         </Paper>
       </li>
     )
