@@ -25,13 +25,15 @@ class App extends Component {
   }
 
   addToPlaylist(songObject) {
-    this.setState({
-      playlist: this.state.playlist.concat(songObject),
-    })
+    // check to see if song is already in playlist
+    if (this.state.playlist.indexOf(songObject) === -1) {
+      this.setState({
+        playlist: this.state.playlist.concat(songObject),
+      })
+    }
   }
 
   render() {
-    console.log(this.state);
     return (
       <MuiThemeProvider>
         <div className="App">
