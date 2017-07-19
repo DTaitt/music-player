@@ -3,34 +3,23 @@ import React, { Component } from 'react';
 // material components
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
+import FontIcon from 'material-ui/FontIcon';
 
 import Songlist from './Songlist.jsx';
 import Playlist from './Playlist.jsx';
 
-const styles = {
-  headline: {
-    fontSize: 24,
-    paddingTop: 16,
-    marginBottom: 12,
-    fontWeight: 400,
-  },
-  slide: {
-    padding: 10,
-  },
-};
-
 class TabBody extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       slideIndex: 0,
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSlideChange = this.handleSlideChange.bind(this);
   }
 
-  handleChange(value) {
+  handleSlideChange(value) {
     this.setState({
       slideIndex: value,
     });
@@ -38,16 +27,16 @@ class TabBody extends Component {
 
   render() {
     return (
-      <div>
-        <Tabs onChange={this.handleChange} value={this.state.slideIndex} >
-          <Tab label="Library" value={0} />
-          <Tab label="Playlist" value={1} />
+      <div className="tab_container">
+        <Tabs onChange={this.handleSlideChange} value={this.state.slideIndex} >
+          <Tab icon={<FontIcon className="material-icons">library_music</FontIcon>} label="Library" value={0} className="library_tab" />
+          <Tab icon={<FontIcon className="material-icons">queue_music</FontIcon>} label="Playlist" value={1} className="playlist_tab" />
         </Tabs>
-        <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} >
+        <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleSlideChange} >
           <div>
             <Songlist songData = { this.props.songData } addToPlaylist = { this.props.addToPlaylist } playlist = { this.props.playlist } />
           </div>
-          <div style={styles.slide}>
+          <div>
             <Playlist songData = { this.props.songData } playlist = { this.props.playlist } />
           </div>
         </SwipeableViews>
