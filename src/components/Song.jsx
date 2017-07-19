@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 //import material components
 import Paper from 'material-ui/Paper';
 import FontIcon from 'material-ui/FontIcon';
-import { red500, blue500 } from 'material-ui/styles/colors';
-import RaisedButton from 'material-ui/RaisedButton';
+import { red500 } from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
@@ -74,7 +73,6 @@ class Song extends Component {
               onClick = { () => this.props.addToPlaylist(this.props.songObject) }
             >playlist_add</FontIcon>
           </div>
-          <RaisedButton primary fullWidth = {true } className="material-icons playlist-btn" onClick = { () => this.props.addToPlaylist(this.props.songObject) } label="Add To Playlist"></RaisedButton>
         </Paper>
       </li>
     )
