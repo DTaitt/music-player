@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import SongInfo from './SongInfo.jsx';
+import InteractionIcons from './InteractionIcons.jsx';
 
 //import material components
 import Paper from 'material-ui/Paper';
-import FontIcon from 'material-ui/FontIcon';
-import { red500 } from 'material-ui/styles/colors';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
 
 class Song extends Component {
 
@@ -17,6 +14,8 @@ class Song extends Component {
       isInPlaylist: false,
     }
 
+    this.likeSong = this.likeSong.bind(this);
+    this.dislikeSong = this.dislikeSong.bind(this);
     this.changePlaylistState = this.changePlaylistState.bind(this);
   }
 
@@ -64,46 +63,16 @@ class Song extends Component {
             {/*<FontIcon className="material-icons play-btn" onTouchTap={ () => this.props.audio.play() }>play_circle_filled</FontIcon>
             <FontIcon className="material-icons play-btn">pause_circle_filled</FontIcon>*/}
           </div>
-          <div className="interaction-icons">
-            {/*like button*/}
-            <FontIcon
-              className="material-icons like-btn"
-              tabIndex="0"
-              onTouchTap={ () => this.likeSong(this.state.isLiked) }
-              color={
-                this.state.isLiked
-                ? red500
-                : ""
-              }
-            >thumb_up</FontIcon>
-            {/*dislike button*/}
-            <FontIcon
-              className="material-icons dislike-btn"
-              tabIndex="0"
-              onTouchTap={ () => this.dislikeSong(this.state.isLiked) }
-              color={
-                this.state.isLiked === false
-                ? red500
-                : ""
-              }
-            >thumb_down</FontIcon>
-            {/*add to playlist button*/}
-            <FontIcon
-              className="material-icons playlist-btn"
-              tabIndex="0"
-              onTouchTap = { () => {
-                this.props.addToPlaylist(this.props.songObject);
-                this.changePlaylistState();
-              } }
-              color={
-                this.state.isInPlaylist === true
-                ? red500
-                : ""
-              }
-            >playlist_add</FontIcon>
-          </div>
+          <InteractionIcons
+            likeSong={ this.likeSong }
+            dislikeSong={ this.dislikeSong }
+            changePlaylistState={ this.changePlaylistState }
+            isLiked={ this.state.isLiked }
+            isInPlaylist={ this.state.isInPlaylist }
+            addToPlaylist={ this.props.addToPlaylist }
+            playlist={ this.props.playlist }
+            songObject={ this.props.songObject } />
         </Paper>
-
       </li>
     )
   }
