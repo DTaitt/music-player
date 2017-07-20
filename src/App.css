@@ -105,6 +105,9 @@ div.song {
     align-items: center;
     padding: 5vw 0; }
 
+.material-icons:hover {
+  cursor: pointer; }
+
 @media screen and (min-width: 426px) {
   /*GLOBAL*/
   h1 {
