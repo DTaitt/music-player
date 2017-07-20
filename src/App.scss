@@ -20,7 +20,7 @@ h2 {
   font-size: 8vw;
 }
 
-p {
+h3 {
   font-size: 4.5vw;
 }
 
@@ -38,7 +38,7 @@ header {
     padding: 5vw;
     text-align: center;
     color: #FFF;
-    letter-spacing: 0.2vw;
+    letter-spacing: 0.1vw;
   }
 }
 
@@ -75,7 +75,7 @@ ul.songlist {
     background: #FFF;
     border: 0.3vw solid $secondary-sand;
   }
-  p.album-title {
+  h3.album-title {
     background: $secondary-sand;
   }
   div.interaction-icons {
@@ -101,7 +101,7 @@ ul.playlist {
   h2.song-title {
     background: $secondary-sand;
   }
-  p.album-title {
+  h3.album-title {
     background: #FFF;
     border: 0.3vw solid $secondary-sand;
   }
@@ -131,7 +131,7 @@ div.song {
     text-align: center;
     padding: 3vw 0;
   }
-  p.album-title {
+  h3.album-title {
     text-align: center;
     padding: 3vw 0;
   }
@@ -162,7 +162,7 @@ div.song {
     font-size: 2vw;
   }
 
-  p {
+  h3 {
     font-size: 2vw;
   }
 
@@ -188,7 +188,7 @@ div.song {
       h2.song-title {
         padding: 2vw 0;
       }
-      p.album-title {
+      h3.album-title {
         padding: 2vw 0;
       }
       div.like-icon {

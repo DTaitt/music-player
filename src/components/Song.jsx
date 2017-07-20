@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SongInfo from './SongInfo.jsx';
 
 //import material components
 import Paper from 'material-ui/Paper';
@@ -55,11 +56,7 @@ class Song extends Component {
     return (
       <li>
         <Paper zDepth={3} rounded={false} className='song'>
-          <div className="song-info" tabIndex="0">
-            <h2 className="artist" tabIndex="0">Artist: { this.props.artist }</h2>
-            <h2 className="song-title" tabIndex="0">Song: { this.props.title }</h2>
-            <p className="album-title" tabIndex="0">Album: { this.props.album }</p>
-          </div>
+          <SongInfo artist={ this.props.artist } title={ this.props.title } album={ this.props.album } />
           <div className="audio-player">
             <audio id={ this.props.audio } controls>
               <source src={ this.props.audio } type={ `audio/${ this.props.filetype }` }/>

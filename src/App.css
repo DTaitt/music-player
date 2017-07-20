@@ -12,7 +12,7 @@ h1 {
 h2 {
   font-size: 8vw; }
 
-p {
+h3 {
   font-size: 4.5vw; }
 
 ul {
@@ -27,7 +27,7 @@ header {
     padding: 5vw;
     text-align: center;
     color: #FFF;
-    letter-spacing: 0.2vw; }
+    letter-spacing: 0.1vw; }
 
 /*MAIN*/
 main {
@@ -52,7 +52,7 @@ ul.songlist {
   ul.songlist h2.song-title {
     background: #FFF;
     border: 0.3vw solid #F4DECB; }
-  ul.songlist p.album-title {
+  ul.songlist h3.album-title {
     background: #F4DECB; }
   ul.songlist div.interaction-icons {
     background: #F4DECB; }
@@ -70,7 +70,7 @@ ul.playlist {
     border: 0.3vw solid #F4DECB; }
   ul.playlist h2.song-title {
     background: #F4DECB; }
-  ul.playlist p.album-title {
+  ul.playlist h3.album-title {
     background: #FFF;
     border: 0.3vw solid #F4DECB; }
   ul.playlist div.interaction-icons {
@@ -92,7 +92,7 @@ div.song {
   div.song h2.song-title {
     text-align: center;
     padding: 3vw 0; }
-  div.song p.album-title {
+  div.song h3.album-title {
     text-align: center;
     padding: 3vw 0; }
   div.song div.interaction-icons {
@@ -111,7 +111,7 @@ div.song {
     font-size: 3vw; }
   h2 {
     font-size: 2vw; }
-  p {
+  h3 {
     font-size: 2vw; }
   /*HEADER*/
   header h1 {
@@ -127,7 +127,7 @@ div.song {
         padding: 3vw 0; }
       div.song div.song-info h2.song-title {
         padding: 2vw 0; }
-      div.song div.song-info p.album-title {
+      div.song div.song-info h3.album-title {
         padding: 2vw 0; }
       div.song div.song-info div.like-icon {
         padding: 7vw; }

@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1>Playr</h1>
+        <h1>Soniq</h1>
       </header>
     )
   }
