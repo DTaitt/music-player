@@ -27,10 +27,10 @@ class TabBody extends Component {
 
   render() {
     return (
-      <div className="tab_container">
+      <div className="tab-container">
         <Tabs onChange={this.handleSlideChange} value={this.state.slideIndex} >
-          <Tab icon={<FontIcon className="material-icons">library_music</FontIcon>} label="Library" value={0} className="library_tab" />
-          <Tab icon={<FontIcon className="material-icons">queue_music</FontIcon>} label="Playlist" value={1} className="playlist_tab" />
+          <Tab icon={<FontIcon className="material-icons">library_music</FontIcon>} label="Library" value={0} className="library-tab" />
+          <Tab icon={<FontIcon className="material-icons">queue_music</FontIcon>} label="Playlist" value={1} className="playlist-tab" />
         </Tabs>
         <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleSlideChange} >
           <div>

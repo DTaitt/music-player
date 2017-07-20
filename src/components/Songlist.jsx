@@ -9,7 +9,7 @@ class Songlist extends Component {
         <ul className="songlist">
         {
           this.props.songData.map((info) => {
-            return <Song songObject = { info } title={ info.title } album={ info.album } audio={ info.audio } key = { info.id } filetype = { info.filetype } addToPlaylist = { this.props.addToPlaylist } playlist = { this.props.playlist } />
+            return <Song songObject = { info } artist={ info.artist } title={ info.title } album={ info.album } audio={ info.audio } key = { info.id } filetype = { info.filetype } addToPlaylist = { this.props.addToPlaylist } playlist = { this.props.playlist } />
           })
         }
         </ul>

@@ -13,7 +13,10 @@ class Song extends Component {
     super();
     this.state = {
       isLiked: null,
+      isInPlaylist: false,
     }
+
+    this.changePlaylistState = this.changePlaylistState.bind(this);
   }
 
   likeSong(likeStatus) {
@@ -40,40 +43,70 @@ class Song extends Component {
     }
   }
 
+  changePlaylistState() {
+    if (this.props.playlist.indexOf(this.props.songObject) === -1) {
+      this.setState({
+        isInPlaylist: true,
+      })
+    }
+  };
+
   render() {
     return (
       <li>
         <Paper zDepth={3} rounded={false} className='song'>
-          <h2 className="song_title">{ this.props.title }</h2>
-          <p className="album_title">{ this.props.album }</p>
-          <audio controls>
-            <source src={ this.props.audio } type={ `audio/${ this.props.filetype }` }/>
-          </audio>
-          <div className="like_icon">
+          <div className="song-info" tabIndex="0">
+            <h2 className="artist" tabIndex="0">Artist: { this.props.artist }</h2>
+            <h2 className="song-title" tabIndex="0">Song: { this.props.title }</h2>
+            <p className="album-title" tabIndex="0">Album: { this.props.album }</p>
+          </div>
+          <div className="audio-player">
+            <audio id={ this.props.audio } controls>
+              <source src={ this.props.audio } type={ `audio/${ this.props.filetype }` }/>
+            </audio>
+            {/*<FontIcon className="material-icons play-btn" onTouchTap={ () => this.props.audio.play() }>play_circle_filled</FontIcon>
+            <FontIcon className="material-icons play-btn">pause_circle_filled</FontIcon>*/}
+          </div>
+          <div className="interaction-icons">
+            {/*like button*/}
             <FontIcon
-              className="material-icons"
-              onClick={ () => this.likeSong(this.state.isLiked) }
+              className="material-icons like-btn"
+              tabIndex="0"
+              onTouchTap={ () => this.likeSong(this.state.isLiked) }
               color={
                 this.state.isLiked
                 ? red500
                 : ""
               }
             >thumb_up</FontIcon>
+            {/*dislike button*/}
             <FontIcon
-              className="material-icons"
-              onClick={ () => this.dislikeSong(this.state.isLiked) }
+              className="material-icons dislike-btn"
+              tabIndex="0"
+              onTouchTap={ () => this.dislikeSong(this.state.isLiked) }
               color={
                 this.state.isLiked === false
                 ? red500
                 : ""
               }
             >thumb_down</FontIcon>
+            {/*add to playlist button*/}
             <FontIcon
               className="material-icons playlist-btn"
-              onClick = { () => this.props.addToPlaylist(this.props.songObject) }
+              tabIndex="0"
+              onTouchTap = { () => {
+                this.props.addToPlaylist(this.props.songObject);
+                this.changePlaylistState();
+              } }
+              color={
+                this.state.isInPlaylist === true
+                ? red500
+                : ""
+              }
             >playlist_add</FontIcon>
           </div>
         </Paper>
+
       </li>
     )
   }
