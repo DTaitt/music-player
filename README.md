@@ -1,8 +1,8 @@
 # Soniq
 
-![Mobile View](http://i.imgur.com/cD0pVO2.png)
+![Mobile View](http://i.imgur.com/MLn2kqZ.png)
 
-![Desktop View](http://i.imgur.com/9uU38tD.png)
+![Desktop View](http://i.imgur.com/ayXap9u.png)
 
 ## About Soniq
 Soniq is a music player web app. With Soniq you can view songs while also liking and disliking them and getting visual feedback on the page. Also, there is a button that can be used to add and remove a song from your playlist.
