@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import SongInfo from './SongInfo.jsx';
 import InteractionIcons from './InteractionIcons.jsx';
+import AudioPlayer from 'react-h5-audio-player';
+
 
 //import material components
 import Paper from 'material-ui/Paper';
@@ -51,11 +53,14 @@ class Song extends Component {
         <Paper zDepth={3} rounded={false} className='song'>
           <SongInfo artist={ this.props.artist } title={ this.props.title } album={ this.props.album } />
           <div className="audio-player">
-            <audio id={ this.props.audio } controls>
+            {/*<audio className={ this.props.audio } controls>
               <source src={ this.props.audio } type={ `audio/${ this.props.filetype }` }/>
-            </audio>
+            </audio>*/}
             {/*<FontIcon className="material-icons play-btn" onTouchTap={ () => this.props.audio.play() }>play_circle_filled</FontIcon>
             <FontIcon className="material-icons play-btn">pause_circle_filled</FontIcon>*/}
+            <AudioPlayer
+              src={ this.props.audio }
+            />
           </div>
           <InteractionIcons
             likeSong={ this.likeSong }
