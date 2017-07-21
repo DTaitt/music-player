@@ -8,6 +8,7 @@
     "npm-run-all": "^4.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-h5-audio-player": "^0.2.5",
     "react-scripts": "1.0.10",
     "react-swipeable-views": "^0.12.4",
     "react-tap-event-plugin": "^2.0.1"
