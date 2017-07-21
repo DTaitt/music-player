@@ -104,10 +104,11 @@ div.song {
 div.audio-player div.react-h5-audio-player div.flex .toggle-play-button, div.audio-player div.react-h5-audio-player div.flex .indicator {
   background: #F44336 !important; }
 
+/*INTERACTION ICONS*/
 .material-icons:hover {
   cursor: pointer; }
 
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 767px) {
   /*GLOBAL*/
   h1 {
     font-size: 3vw; }
