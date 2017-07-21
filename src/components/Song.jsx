@@ -44,11 +44,9 @@ class Song extends Component {
   }
 
   changePlaylistState() {
-    if (this.props.playlist.indexOf(this.props.songObject) === -1) {
-      this.setState({
-        isInPlaylist: true,
-      })
-    }
+    this.setState(prevState => ({
+      isInPlaylist: !prevState.isInPlaylist,
+    }));
   };
 
   render() {

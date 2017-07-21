@@ -26,9 +26,15 @@ class App extends Component {
   addToPlaylist(songObject) {
     // check to see if song is already in playlist
     if (this.state.playlist.indexOf(songObject) === -1) {
-      this.setState({
-        playlist: this.state.playlist.concat(songObject),
-      })
+      this.setState(prevState => ({
+        playlist: prevState.playlist.concat(songObject),
+      }));
+    } else {
+      this.setState(prevState => ({
+        playlist: prevState.playlist.filter(song => {
+          return song !== songObject;
+        })
+      }))
     }
   }
 
