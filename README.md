@@ -10,6 +10,8 @@ Soniq is a music player web app. With Soniq you can view songs while also liking
 ## Technologies Used
 - React
 - Material UI
+- React Swipeable Views
+- React H5 Audio Player
 - SASS
 
 ## Installation Instructions
@@ -18,8 +20,7 @@ Soniq is a music player web app. With Soniq you can view songs while also liking
 2. Go to `localhost:3000` and enjoy!
 
 ## Next Steps
-- Create customized song player
-    - Give visual feedback that the song is playing
+- ~~Create customized song player~~ 
 - Implement seamless play for the playlist
 - Have ability to make multiple playlists
 - Convert the project to Typescript
