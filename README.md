@@ -25,4 +25,5 @@ Soniq is a music player web app. With Soniq you can view songs while also liking
 - Convert the project to Typescript
 - Implement Redux
 - Implement user authentication
+- Write tests
 - Make a version with a Django back-end
