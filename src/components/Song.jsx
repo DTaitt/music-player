@@ -20,27 +20,23 @@ class Song extends Component {
   }
 
   likeSong(likeStatus) {
-    if (likeStatus === true) {
-      this.setState({
+    likeStatus === true
+    ? this.setState({
         isLiked: null,
       })
-    } else {
-      this.setState({
+    : this.setState({
         isLiked: true,
       })
-    }
   }
 
   dislikeSong(likeStatus) {
-    if (likeStatus === false) {
-      this.setState({
+    likeStatus === false
+    ? this.setState({
         isLiked: null,
       })
-    } else {
-      this.setState({
+    : this.setState({
         isLiked: false,
       })
-    }
   }
 
   changePlaylistState() {
