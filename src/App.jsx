@@ -16,11 +16,19 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      songData: songData,
+      songData: null,
       playlist: [],
+      songDataIsLoaded: false,
     }
 
     this.addToPlaylist = this.addToPlaylist.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState(prevState => ({
+      songData: songData,
+      songDataIsLoaded: true,
+    }))
   }
 
   addToPlaylist(songObject) {
@@ -44,7 +52,10 @@ class App extends Component {
         <div className="App">
           <Header />
           <main>
-            <TabBody songData = { this.state.songData } addToPlaylist = { this.addToPlaylist } playlist = { this.state.playlist } />
+            { this.state.songDataIsLoaded
+            ?<TabBody songData = { this.state.songData } addToPlaylist = { this.addToPlaylist } playlist = { this.state.playlist } />
+            : console.log('not loaded')
+            }
           </main>
         </div>
       </MuiThemeProvider>
