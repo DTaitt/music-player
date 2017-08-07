@@ -56,7 +56,7 @@ class App extends Component {
           <main>
             { this.state.songDataIsLoaded
             ?<TabBody songData = { this.state.songData } addToPlaylist = { this.addToPlaylist } playlist = { this.state.playlist } />
-            : <img src={ loading } />
+            : <img src={ loading } alt='loading gif' />
             }
           </main>
         </div>
