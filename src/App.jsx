@@ -11,6 +11,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './components/Header.jsx';
 import TabBody from './components/TabBody.jsx';
 
+import loading from './loading.gif';
+
 class App extends Component {
 
   constructor() {
@@ -54,7 +56,7 @@ class App extends Component {
           <main>
             { this.state.songDataIsLoaded
             ?<TabBody songData = { this.state.songData } addToPlaylist = { this.addToPlaylist } playlist = { this.state.playlist } />
-            : console.log('not loaded')
+            : <img src={ loading } />
             }
           </main>
         </div>
