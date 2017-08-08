@@ -23,10 +23,15 @@ class App extends Component {
       songDataIsLoaded: false,
     }
 
+    this.fetchSongData = this.fetchSongData.bind(this);
     this.addToPlaylist = this.addToPlaylist.bind(this);
   }
 
   componentDidMount() {
+    this.fetchSongData();
+  }
+
+  fetchSongData() {
     this.setState(prevState => ({
       songData: songData,
       songDataIsLoaded: true,
