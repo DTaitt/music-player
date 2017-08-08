@@ -4,7 +4,7 @@ import {shallow} from 'enzyme';
 //import components
 import AppClass from './../App';
 
-const App = shallow(<AppClass />);
+const App = shallow(<AppClass />, { lifecycleExperimental: true });
 
 describe('App.js', () => {
   describe('rendering', () => {
