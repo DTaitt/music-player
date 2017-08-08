@@ -21,4 +21,9 @@ describe('App.js', () => {
       expect(App.find('TabBody').exists()).toBe(true);
     })
   })
+  describe('loads', () => {
+    test('song data', () => {
+      expect(App.state('songData')).not.toBe(null);
+    })
+  })
 })
