@@ -7,7 +7,7 @@ import AppClass from './../App';
 
 const setup = (propOverrides) => {
   const props = Object.assign({
-    onChange: jest.fn(),
+    fetchSongData: jest.fn(),
     addToPlaylist: jest.fn(),
   }, propOverrides)
 
