@@ -7,7 +7,7 @@ import TabBodyClass from './../components/TabBody';
 
 const setup = (propOverrides) => {
   const props = Object.assign({
-    handleSlideChange: jest.fn(),
+    onChange: jest.fn(),
   }, propOverrides)
 
   const TabBody = shallow(<TabBodyClass {...props} />, { lifecycleExperimental: true })
@@ -54,9 +54,4 @@ describe('TabBody.js', () => {
       expect(Playlist.exists()).toBe(true);
     })
   })
-  // describe('calls', () => {
-  //   test('fetchSongData', () => {
-  //     expect(songData).not.toBeNull();
-  //   })
-  // })
 })
