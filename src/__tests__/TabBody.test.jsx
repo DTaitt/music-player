@@ -35,28 +35,19 @@ const { SwipeableViews } = setup();
 const { Songlist } = setup();
 const { Playlist } = setup();
 
+function renderTester(name, component) {
+  test(`${name} component`, () => {
+      expect(component.exists()).toBe(true);
+    })
+}
+
 describe('TabBody.js', () => {
   describe('renders', () => {
-    test('TabBody component', () => {
-      expect(TabBody.exists()).toBe(true);
-    })
-    test('Tabs component', () => {
-      expect(Tabs.exists()).toBe(true);
-    })
-    test('Tab component', () => {
-      expect(Tab.exists()).toBe(true);
-    })
-    test('TabContainerDiv component', () => {
-      expect(TabContainerDiv.exists()).toBe(true);
-    })
-    test('SwipeableViews component', () => {
-      expect(SwipeableViews.exists()).toBe(true);
-    })
-    test('Songlist component', () => {
-      expect(Songlist.exists()).toBe(true);
-    })
-    test('Playlist component', () => {
-      expect(Playlist.exists()).toBe(true);
-    })
+    renderTester('TabBody', TabBody)
+    renderTester('Tabs', Tabs)
+    renderTester('Tab', Tab)
+    renderTester('SwipeableViews', SwipeableViews)
+    renderTester('Songlist', Songlist)
+    renderTester('Playlist', Playlist)
   })
 })
