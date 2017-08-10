@@ -33,12 +33,8 @@ class TabBody extends Component {
           <Tab icon={<FontIcon className="material-icons">queue_music</FontIcon>} label="Playlist" value={1} className="playlist-tab" />
         </Tabs>
         <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleSlideChange} >
-          <div>
             <Songlist songData = { this.props.songData } addToPlaylist = { this.props.addToPlaylist } playlist = { this.props.playlist } />
-          </div>
-          <div>
             <Playlist songData = { this.props.songData } playlist = { this.props.playlist } />
-          </div>
         </SwipeableViews>
       </div>
     )
