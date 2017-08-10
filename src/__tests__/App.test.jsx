@@ -34,23 +34,19 @@ const { appDiv } = setup();
 const { Header } = setup();
 const { TabBody } = setup();
 
+function renderTester(name, component) {
+  test(`${name} component`, () => {
+      expect(component.exists()).toBe(true);
+    })
+}
+
 describe('App.js', () => {
   describe('renders', () => {
-    test('App component', () => {
-      expect(App.exists()).toBe(true);
-    })
-    test('MuiThemeProvider component', () => {
-      expect(MuiThemeProvider.exists()).toBe(true);
-    })
-    test('appDiv component', () => {
-      expect(appDiv.exists()).toBe(true);
-    })
-    test('Header component', () => {
-      expect(Header.exists()).toBe(true);
-    })
-    test('TabBody component', () => {
-      expect(TabBody.exists()).toBe(true);
-    })
+    renderTester('App', App)
+    renderTester('MuiThemeProvider', MuiThemeProvider)
+    renderTester('appDiv', appDiv)
+    renderTester('Header', Header)
+    renderTester('TabBody', TabBody)
   })
   describe('calls', () => {
     test('fetchSongData', () => {
