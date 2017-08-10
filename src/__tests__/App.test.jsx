@@ -19,6 +19,7 @@ const setup = (propOverrides) => {
     songData: App.state('songData'),
     playlist: App.state('playlist'),
     MuiThemeProvider: App.find('MuiThemeProvider'),
+    appDiv: App.find('div.App'),
     Header: App.find('Header'),
     TabBody: App.find('TabBody'),
   }
@@ -29,6 +30,7 @@ const { App } = setup();
 const { songData } = setup();
 const { playlist } = setup();
 const { MuiThemeProvider } = setup();
+const { appDiv } = setup();
 const { Header } = setup();
 const { TabBody } = setup();
 
@@ -39,6 +41,9 @@ describe('App.js', () => {
     })
     test('MuiThemeProvider component', () => {
       expect(MuiThemeProvider.exists()).toBe(true);
+    })
+    test('appDiv component', () => {
+      expect(appDiv.exists()).toBe(true);
     })
     test('Header component', () => {
       expect(Header.exists()).toBe(true);

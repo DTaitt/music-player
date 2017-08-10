@@ -18,6 +18,7 @@ const setup = (propOverrides) => {
     slideIndex: TabBody.state('slideIndex'),
     Tabs: TabBody.find('Tabs'),
     Tab: TabBody.find('Tab'),
+    TabContainerDiv: TabBody.find('.tab-container'),
     SwipeableViews: TabBody.find('SwipeableViews'),
     Songlist: TabBody.find('Songlist'),
     Playlist: TabBody.find('Playlist'),
@@ -29,6 +30,7 @@ const { TabBody } = setup();
 const { slideIndex } = setup();
 const { Tabs } = setup();
 const { Tab } = setup();
+const { TabContainerDiv } = setup();
 const { SwipeableViews } = setup();
 const { Songlist } = setup();
 const { Playlist } = setup();
@@ -43,6 +45,9 @@ describe('TabBody.js', () => {
     })
     test('Tab component', () => {
       expect(Tab.exists()).toBe(true);
+    })
+    test('TabContainerDiv component', () => {
+      expect(TabContainerDiv.exists()).toBe(true);
     })
     test('SwipeableViews component', () => {
       expect(SwipeableViews.exists()).toBe(true);
