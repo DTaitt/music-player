@@ -28,19 +28,17 @@ const { SonglistSection } = setup();
 const { SonglistUl } = setup();
 const { Song } = setup();
 
+function renderTester(name, component) {
+  test(`${name} component`, () => {
+      expect(component.exists()).toBe(true);
+    })
+}
+
 describe('Songlist.js', () => {
   describe('renders', () => {
-    test('Songlist component', () => {
-      expect(Songlist.exists()).toBe(true);
-    })
-    test('SonglistSection component', () => {
-      expect(SonglistSection.exists()).toBe(true);
-    })
-    test('SonglistUl component', () => {
-      expect(SonglistUl.exists()).toBe(true);
-    })
-    test('Song component', () => {
-      expect(Song.exists()).toBe(true);
-    })
+    renderTester('Songlist', Songlist)
+    renderTester('SonglistSection', SonglistSection)
+    renderTester('SonglistUl', SonglistUl)
+    renderTester('Song', Song)
   })
 })
