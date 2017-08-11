@@ -6,14 +6,9 @@ import TabBodyClass from './../components/TabBody';
 
 
 const setup = (propOverrides) => {
-  const props = Object.assign({
-    onChange: jest.fn(),
-  }, propOverrides)
-
-  const TabBody = shallow(<TabBodyClass {...props} />, { lifecycleExperimental: true })
+  const TabBody = shallow(<TabBodyClass />)
 
   return {
-    props,
     TabBody,
     slideIndex: TabBody.state('slideIndex'),
     Tabs: TabBody.find('Tabs'),
@@ -25,7 +20,6 @@ const setup = (propOverrides) => {
   }
 }
 
-const { props } = setup();
 const { TabBody } = setup();
 const { slideIndex } = setup();
 const { Tabs } = setup();
@@ -49,5 +43,12 @@ describe('TabBody.js', () => {
     renderTester('SwipeableViews', SwipeableViews)
     renderTester('Songlist', Songlist)
     renderTester('Playlist', Playlist)
+  })
+  describe('calls', () => {
+    test('handleSlideChange', () => {
+      expect(TabBody.state('slideIndex')).toBe(0);
+      TabBody.find('Tabs').simulate('change', 1);
+      expect(TabBody.state('slideIndex')).toBe(1);
+    })
   })
 })
