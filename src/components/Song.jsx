@@ -51,11 +51,12 @@ class Song extends Component {
     return (
       <li className="song">
         <Paper zDepth={3} rounded={false} className='song'>
-          <SongInfo artist={ this.props.artist } title={ this.props.title } album={ this.props.album } />
+          <SongInfo className="song-info" artist={ this.props.artist } title={ this.props.title } album={ this.props.album } />
           <div className="audio-player">
-            <AudioPlayer src={ this.props.audio } />
+            <AudioPlayer className="audio-player-component" src={ this.props.audio } />
           </div>
           <InteractionIcons
+            className="interaction-icons"
             likeSong={ this.likeSong }
             dislikeSong={ this.dislikeSong }
             changePlaylistState={ this.changePlaylistState }

@@ -17,10 +17,10 @@ const setup = (propOverrides) => {
     Song,
     SongLi: Song.find('li.song'),
     Paper: Song.find('Paper'),
-    SongInfo: Song.find('SongInfo'),
+    SongInfo: Song.find('.song-info'),
     AudioPlayerDiv: Song.find('div.audio-player'),
-    AudioPlayer: Song.find('AudioPlayer'),
-    InteractionIcons: Song.find('InteractionIcons'),
+    AudioPlayer: Song.find('.audio-player-component'),
+    InteractionIcons: Song.find('.interaction-icons'),
   }
 }
 
@@ -46,9 +46,9 @@ describe('Song.js', () => {
     renderTester('Song', Song)
     renderTester('SongLi', SongLi)
     renderTester('Paper', Paper)
-    // renderTester('SongInfo', SongInfo)
+    renderTester('SongInfo', SongInfo)
     renderTester('AudioPlayerDiv', AudioPlayerDiv)
-    // renderTester('AudioPlayer', AudioPlayer)
-    // renderTester('InteractionIcons', InteractionIcons)
+    renderTester('AudioPlayer', AudioPlayer)
+    renderTester('InteractionIcons', InteractionIcons)
   })
 })
