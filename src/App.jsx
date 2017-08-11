@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import loading from './assets/loading.gif';
 
 //import song data
 import songData from './db/songData.js';
@@ -11,7 +12,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './components/Header.jsx';
 import TabBody from './components/TabBody.jsx';
 
-import loading from './loading.gif';
 
 class App extends Component {
 
