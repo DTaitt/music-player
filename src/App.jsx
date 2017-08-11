@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 //import song data
-import songData from './songData.js';
+import songData from './db/songData.js';
 
 //import material components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
