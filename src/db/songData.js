@@ -1,12 +1,8 @@
-// import 'prettyWings' from './audio/03 Pretty Wings.mp3';
-// import 'shapeOfYou' from './audio/04 - Shape of You.mp3';
-// import 'pdf' from './audio/Donovan_Taitt_Resume.pdf';
-
-const prettyWings = require('./../audio/03 Pretty Wings.mp3');
-const shapeOfYou = require('./../audio/04 - Shape of You.mp3');
-const fuGeeLa = require('./../audio/06. Fu-Gee-La.mp3');
-const luv = require('./../audio/14. Luv.mp3');
-const someoneLikeYou = require('./../audio/17 Adele - Someone Like You (Live Acoustic).mp3');
+import { prettyWings } from './../audio/03 Pretty Wings.mp3';
+import { shapeOfYou } from './../audio/04 - Shape of You.mp3';
+import { fuGeeLa } from './../audio/06. Fu-Gee-La.mp3';
+import { luv } from './../audio/14. Luv.mp3';
+import { someoneLikeYou } from './../audio/17 Adele - Someone Like You (Live Acoustic).mp3';
 
 const songData = [
   {
