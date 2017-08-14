@@ -6,16 +6,10 @@ import InteractionIconsClass from './../components/InteractionIcons';
 
 
 const setup = (propOverrides) => {
-  // const props = Object.assign({
-  //   onChange: jest.fn(),
-  // }, propOverrides)
-
   const InteractionIcons = shallow(<InteractionIconsClass />, { lifecycleExperimental: true })
 
   return {
-    // props,
     InteractionIcons,
-    // slideIndex: InteractionIcons.state('slideIndex'),
     InteractionIconsDiv: InteractionIcons.find('div.interaction-icons'),
     LikeBtn: InteractionIcons.find('FontIcon.like-btn'),
     DislikeBtn: InteractionIcons.find('FontIcon.dislike-btn'),
@@ -23,7 +17,6 @@ const setup = (propOverrides) => {
   }
 }
 
-// const { props } = setup();
 const { InteractionIcons } = setup();
 const { InteractionIconsDiv } = setup();
 const { LikeBtn } = setup();
